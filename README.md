@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # practice-PP2
 
 ## Practice 1
@@ -11,3 +12,6 @@ This repository contains my solutions for Practice 1 of PP2 course.
 
 ### Student:
 Nuray Serikkyzy
+=======
+Practice PP2
+>>>>>>> 4fa918c (Add Python Syntax example)
