@@ -1,27 +1,36 @@
+#1
 import datetime
+tday = datetime.date.today()
+new_date = tday - datetime.timedelta(days=5)
 
-x = datetime.datetime.now()
-print(x)
+print("Today:", tday)
+print("5 days ago:", new_date)
 
 
+#2
 import datetime
+tday = datetime.date.today()
+yesterday = tday - datetime.timedelta(days=1)
+tomorrow = tday + datetime.timedelta(days=1)
 
-x = datetime.datetime.now()
+print("Yesterday:", yesterday)
+print("Today:", tday)
+print("Tomorrow:", tomorrow)
 
-print(x.year)
-print(x.strftime("%A"))
 
-
+#3
 import datetime
+nw = datetime.datetime.now()
+without_microseconds = nw.replace(microsecond=0)
 
-x = datetime.datetime(2020, 5, 17)
-
-print(x)
-
+print("With microseconds:", nw)
+print("Without microseconds:", without_microseconds)
 
 
-import datetime
 
-x = datetime.datetime(2018, 6, 1)
+#4
+from datetime import datetime
+d1 = datetime(2025, 1, 1, 12, 0, 0)
+d2 = datetime(2025, 1, 2, 12, 0, 0)
 
-print(x.strftime("%B"))
+print((d2 - d1).total_seconds())

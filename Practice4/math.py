@@ -18,16 +18,31 @@ x = math.sqrt(64)
 print(x)
 
 
-
+#1
 import math
-x = math.ceil(1.4)
-y = math.floor(1.4)
-
-print(x) # returns 2
-print(y)
+degree = 15
+radian = degree * math.pi / 180
+print("Output radian:", round(radian, 6))
 
 
+#2
+height = 5
+a = 5
+b = 6
+area = (a + b) / 2 * height
+print("Expected Output:", area)
 
+
+#3
 import math
-x = math.pi
-print(x)
+n = 4
+a = 25
+area = (n * a**2) / (4 * math.tan(math.pi / n))
+print("The area of the polygon is:", round(area, 0))
+
+
+#4
+base = 5
+height = 6
+area = base * height
+print("Expected Output:", float(area))
