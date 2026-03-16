@@ -54,8 +54,6 @@ x = {
 
 print(json.dumps(x))
 
-json.dumps(x, indent=4)
 
-json.dumps(x, indent=4, separators=(". ", " = "))
-
-json.dumps(x, indent=4, sort_keys=True)
+#json.dumps(x, indent=4, separators=(". ", " = "))
+#json.dumps(x, indent=4, sort_keys=True)
