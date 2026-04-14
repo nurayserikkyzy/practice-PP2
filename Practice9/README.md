@@ -1,4 +1,4 @@
-# Practice 7 - Pygame Games 
+# Practice 9 - Pygame Games 
 
 This project contains three mini-games built using Python and Pygame.
 
