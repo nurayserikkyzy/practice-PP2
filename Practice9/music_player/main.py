@@ -46,15 +46,15 @@ def main():
                     running = False
 
         track_name = player.get_current_track_name()
-        text = font.render(f"Track: {track_name}", True, (255, 255, 255))
+        text = font.render(f"Track: {track_name}", True, ('Blue'))
         screen.blit(text, (50, 100))
 
         if player.is_playing:
             status = "Playing"
-            color = (0, 200, 0)
+            color = ('Purple')
         else:
             status = "Stopped"
-            color = (200, 0, 0)
+            color = ('White')
 
         status_text = font.render(f"Status: {status}", True, color)
         screen.blit(status_text, (50, 150))
