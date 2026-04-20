@@ -7,7 +7,7 @@ def main():
     pygame.display.set_caption("Mickey Mouse Clock")
     
     clock_timer = pygame.time.Clock()
-    mickey_clock = MickeyClock(screen) # Создаем экземпляр часов
+    mickey_clock = MickeyClock(screen)
 
     running = True
     while running:
@@ -17,7 +17,7 @@ def main():
 
         screen.fill((255, 255, 255))
         
-        # Вызываем метод отрисовки из clock.py
+        
         mickey_clock.draw()
 
         pygame.display.flip()
