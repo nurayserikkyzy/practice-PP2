@@ -12,9 +12,8 @@ def main():
 
     radius = 10
     
-    # РАЗДЕЛЯЕМ: отдельно цвет, отдельно тип рисования
     current_color = 'blue' 
-    shape_mode = 'brush' # 'brush', 'square', 'right_triangle', etc.
+    shape_mode = 'brush' 
 
     drawing = False
     start_pos = None
@@ -32,7 +31,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     return
                 
-                # Меняем ТОЛЬКО цвет
+           
                 elif event.key == pygame.K_r: current_color = 'red'
                 elif event.key == pygame.K_g: current_color = 'green'
                 elif event.key == pygame.K_b: current_color = 'blue'
@@ -43,7 +42,7 @@ def main():
                 elif event.key == pygame.K_t: shape_mode = 'right_triangle'
                 elif event.key == pygame.K_i: shape_mode = 'equilateral'
                 elif event.key == pygame.K_h: shape_mode = 'rhombus'
-                elif event.key == pygame.K_f: shape_mode = 'brush' # Добавим возврат к кисти
+                elif event.key == pygame.K_f: shape_mode = 'brush' 
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 if event.button == 1:
@@ -56,7 +55,7 @@ def main():
                 if event.button == 1:
                     drawing = False
                     curr_pos = event.pos
-                    # Используем current_color для цвета
+                   
                     if shape_mode == 'square':
                         draw_square(canvas, start_pos, curr_pos, current_color)
                     elif shape_mode == 'right_triangle':
@@ -71,13 +70,13 @@ def main():
                         draw_circle(canvas, start_pos, curr_pos, current_color)
 
             if event.type == pygame.MOUSEMOTION:
-                # Кисть работает, только если не выбрана фигура и не зажаты спец-клавиши
+               
                 if drawing and shape_mode == 'brush' and not (shift or ctrl):
                     draw_brush(canvas, event.pos, radius, current_color)
 
         screen.blit(canvas, (0, 0))
         
-        # Предпросмотр (Preview) во время перетаскивания мыши
+        
         if drawing:
             curr_pos = pygame.mouse.get_pos()
             if shape_mode == 'square':
@@ -96,7 +95,6 @@ def main():
         pygame.display.flip()
         clock.tick(60)
 
-# Функции отрисовки остаются такими же, они теперь принимают current_color в аргумент mode
 def get_color(mode):
     colors = {'red': (255, 0, 0), 'green': (0, 255, 0), 'blue': (0, 0, 255), 'eraser': (0, 0, 0)}
     return colors.get(mode, (255, 255, 255)) 
