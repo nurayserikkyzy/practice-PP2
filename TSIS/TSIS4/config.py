@@ -1,0 +1,7 @@
+DATABASE_ACCESS = {
+    "host": "localhost",
+    "database": "snake_db",
+    "user": "postgres",
+    "password": "postgres",
+    "port": "5432",
+}
