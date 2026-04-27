@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Boston",
+        "email": "bostonhandsome@gmail.com",
+        "birthday": "2008-12-31",
+        "phones": [
+            {
+                "phone": "8705456985",
+                "type": "mobile"
+            }
+        ]
+    },
+    {
+        "name": "Simba",
+        "email": "simbacreeoy@gmail.ru",
+        "birthday": "2007-08-12",
+        "phones": [
+            {
+                "phone": "87054257551",
+                "type": "home"
+            }
+        ]
+    }
+]
