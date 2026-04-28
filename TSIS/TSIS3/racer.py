@@ -5,16 +5,18 @@ import os
 WIDTH, HEIGHT = 400, 600
 
 def get_asset(name):
-    # Если путь уже содержит assets, не добавляем его снова
-    if name.startswith("assets/"):
-        return name
-    return os.path.join("assets", name)
+    # Убеждаемся, что ищем в папке assets
+    path = os.path.join("assets", name)
+    return path
 
 class Player(pygame.sprite.Sprite):
     def __init__(self, img_name="Player.png"):
         super().__init__()
-        path = get_asset(img_name)
-        self.image = pygame.transform.scale(pygame.image.load(path), (45, 90))
+        try:
+            self.image = pygame.transform.scale(pygame.image.load(get_asset(img_name)), (45, 90))
+        except:
+            self.image = pygame.Surface((45, 90))
+            self.image.fill((0, 255, 0)) # Зеленый, если нет картинки
         self.rect = self.image.get_rect(center=(200, 520))
         self.shield = False
 
@@ -26,8 +28,11 @@ class Player(pygame.sprite.Sprite):
 class Enemy(pygame.sprite.Sprite):
     def __init__(self, speed):
         super().__init__()
-        path = get_asset("Enemy.png")
-        self.image = pygame.transform.scale(pygame.image.load(path), (45, 90))
+        try:
+            self.image = pygame.transform.scale(pygame.image.load(get_asset("Enemy.png")), (45, 90))
+        except:
+            self.image = pygame.Surface((45, 90))
+            self.image.fill((255, 0, 0)) # Красный
         self.rect = self.image.get_rect(center=(random.randint(50, 350), -100))
         self.speed = speed
 
@@ -40,8 +45,12 @@ class Collectible(pygame.sprite.Sprite):
     def __init__(self, itype, speed):
         super().__init__()
         self.type = itype
-        path = get_asset(f"{itype}.png")
-        img = pygame.image.load(path)
+        try:
+            img = pygame.image.load(get_asset(f"{itype}.png"))
+        except:
+            img = pygame.Surface((30, 30))
+            img.fill((255, 255, 0)) # Желтый
+            
         size = (60, 35) if itype == 'oil' else (30, 30)
         self.image = pygame.transform.scale(img, size)
         self.rect = self.image.get_rect(center=(random.randint(30, 370), -100))
